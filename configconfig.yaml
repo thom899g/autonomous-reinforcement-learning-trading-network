@@ -1,0 +1,28 @@
+trading_network:
+  agent_count: 5
+  parallel_environments: 3
+  checkpoint_interval_hours: 1
+  max_episode_steps: 1000
+  
+firebase:
+  project_id: "autonomous-trading-network"
+  collection_name: "agent_states"
+  performance_metrics_collection: "performance_metrics"
+  
+training:
+  total_timesteps: 1000000
+  learning_rate: 0.0003
+  batch_size: 64
+  gamma: 0.99
+  tensorboard_log: "./logs/tensorboard/"
+  
+risk_management:
+  max_position_size: 0.1  # 10% of portfolio
+  max_drawdown: 0.2      # 20%
+  stop_loss_pct: 0.02    # 2%
+  
+market:
+  symbols: ["BTC/USDT", "ETH/USDT", "SOL/USDT"]
+  timeframe: "1h"
+  initial_balance: 10000.0
+  commission_rate: 0.001  # 0.1%
